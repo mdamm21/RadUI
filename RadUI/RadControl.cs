@@ -37,8 +37,16 @@ namespace RadUI
             base.OnRender(drawingContext);
 
             _blips.Clear();
-
         }
-        //Blips hinzufügen
+
+        private static Point PolarToPoint(Point center, double r, double angleDeg)
+        {
+            double rad = angleDeg * Math.PI / 180;
+            double x = center.X + r * Math.Cos(rad);
+            double y = center.Y + r * Math.Sin(rad);
+
+            return new Point(x, y);
+        }
+
     }
 }
