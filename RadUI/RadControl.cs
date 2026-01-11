@@ -32,7 +32,13 @@ namespace RadUI
             Loaded += (_, __) => _timer.Start();
             Unloaded += (_, __) => _timer.Stop();
         }
-        //Zeichnen mit OnRender
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            base.OnRender(drawingContext);
+
+            _blips.Clear();
+
+        }
         //Blips hinzufügen
     }
 }
