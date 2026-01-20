@@ -45,7 +45,27 @@ namespace RadUI
         {
             base.OnRender(drawingContext);
 
-            _blips.Clear();
+            var width = ActualWidth;
+            var height = ActualHeight;
+            if (width <= 10 || height <= 10) return;
+
+            var center = new Point(width/2.0 , height);
+            var radius = Math.Min(width/2.0 , height) -10 ;
+
+            //Hintergrund
+            drawingContext.DrawRectangle(Brushes.Black, null, new Rect(0, 0, width, height));
+
+            var gridPen = new Pen(new SolidColorBrush(Color.FromArgb(90, 0, 255, 0)), 1);
+            gridPen.Freeze();
+
+            var brightPen = new Pen(new SolidColorBrush(Color.FromArgb(200, 0, 255, 0)), 2);
+            brightPen.Freeze();
+
+            // Halbkreis
+
+            // Grad- Linien 
+
+            // Blips 
         }
 
         //Polarkoordinaten umwandeln in Punkt
